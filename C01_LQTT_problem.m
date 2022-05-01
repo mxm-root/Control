@@ -13,7 +13,7 @@ d = 1; xi = 1;
 f = 0.05;
 q = 50;
 r = 0.2;
-% Elements of the optimal
+% Elements of the Riccati an linear vector diff eq equations
 l=a-q*d/(r+q*d^2);
 m=1./(r+q*d^2);
 n=q*d/(r+q*d^2);
@@ -35,7 +35,8 @@ for t = tk:-dt:0
     % Desired trajectory
     z = (xx^3 + 3*xx^2 - 6*xx - 8)/4;
     % Riccati equation
-    k = k-dt*(m*k^2 - 2.*l*k - v);    
+    k = k-dt*(m*k^2 - 2.*l*k - v);   
+    % linear vector diff eq
     g = g-dt*((k*m-l)*g+(k*n-w)*z + k*xi);   
     %
     tm(((tk/dt)+2)-i,1) = t;
