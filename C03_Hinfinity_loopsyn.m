@@ -29,7 +29,7 @@ plant_poles = pole(G);
 plant_zeros = tzero(G);
 
 s = zpk('s'); % Laplace variable s
-Gd = 8/s;
+Gd = 9/s;
 
 [K,CL,GAM] = loopsyn(G,Gd);
 GAM
@@ -48,7 +48,7 @@ title('Responses to step commands for alpha');
 Kr = reduce(K,8);
 order(Kr)
 
-AA=Kr.A;
-BB=Kr.B;
-CC=Kr.C;
-DD=Kr.D;
+A = Kr.A;
+B = Kr.B;
+C = Kr.C;
+D = Kr.D;
